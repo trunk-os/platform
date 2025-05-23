@@ -6,6 +6,7 @@ RUN cargo install --git https://github.com/trunk-os/buckle
 FROM debian
 
 COPY --from=rust /usr/local/cargo/bin/buckle /usr/bin/buckle
+COPY --from=rust /usr/local/cargo/bin/buckled /usr/bin/buckled
 COPY config.yaml /trunk/config.yaml
 
-CMD ["buckle"]
+CMD ["buckled", "/trunk/config.yaml"]
