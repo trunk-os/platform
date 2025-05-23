@@ -27,4 +27,4 @@ Packaging repository
 - optionally overwrite `run`; it controls container startup with podman.
 - also optionally overwrite `pre-down`, which is run right before the container is removed forcefully.
 - Make use of `$(TAG)` and `$(NAME)` to keep with the common workflow within these tasks.
-- everything else should be managed for you. There are other tasks in [containers/include.mk](include.mk) you can overwrite, but it probably isn't wise.
+- everything else should be managed for you. There are other tasks in [include.mk](containers/include.mk) you can overwrite, but it probably isn't wise.
