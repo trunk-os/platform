@@ -1,4 +1,4 @@
-DIRS ?= $(shell find . -maxdepth 1 -type d | tail -n +2)
+DIRS ?= $(shell find . -maxdepth 1 -type d | tail -n +2 | sort)
 
 all:
 	for i in $(DIRS); do cd $$i && make; cd ..; done

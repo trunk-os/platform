@@ -5,4 +5,4 @@ pre-down:
 
 run: down
 	mkdir -p /tmp/buckle
-	podman run -it -d --privileged --name $(NAME) --pid host -v /tmp/buckle:/trunk/socket "$(TAG)"
+	sudo podman run -it -d --privileged --name $(NAME) --net bridge --device /dev/zfs --pid host -v /tmp/buckle:/trunk/socket "$(TAG)"

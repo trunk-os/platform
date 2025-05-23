@@ -5,6 +5,9 @@ RUN cargo install --git https://github.com/trunk-os/buckle
 
 FROM debian
 
+RUN /bin/echo -e "deb http://deb.debian.org/debian bookworm-backports main contrib\ndeb-src http://deb.debian.org/debian bookworm-backports main contrib" >/etc/apt/sources.list.d/contrib.list
+
+RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install zfsutils-linux -y
 COPY --from=rust /usr/local/cargo/bin/buckle /usr/bin/buckle
 COPY --from=rust /usr/local/cargo/bin/buckled /usr/bin/buckled
 COPY config.yaml /trunk/config.yaml
