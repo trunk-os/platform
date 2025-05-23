@@ -8,4 +8,7 @@ containers:
 clean-containers:
 	cd containers && make clean
 
-.PHONY: all containers
+run-containers:
+	cd containers && make run
+
+.PHONY: all clean containers clean-containers run-containers

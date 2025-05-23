@@ -6,6 +6,7 @@ Packaging repository
 
 - `all`: builds all subtrees
 - `clean`: cleans all subtree build artifacts
+- `run-containers`: runs all containers; see "Containers" below for more information.
 
 ### Containers
 
