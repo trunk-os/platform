@@ -4,7 +4,7 @@ LATEST_TAG ?= $(BASE_TAG):latest
 
 all: Containerfile.stamp
 
-Containerfile.stamp: Containerfile
+Containerfile.stamp: *
 	podman build -t "$(TAG)" .
 	podman tag "$(TAG)" "$(LATEST_TAG)"
 	touch Containerfile.stamp

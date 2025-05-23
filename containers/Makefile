@@ -7,4 +7,7 @@ all:
 		cd ..; \
 	done
 
-.PHONY: all
+clean:
+	rm -f */Containerfile.stamp
+
+.PHONY: all clean
