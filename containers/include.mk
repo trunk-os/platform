@@ -8,9 +8,12 @@ BUILD_ARGS ?= --pull=always --no-cache
 all: .stamp.make
 
 .stamp.make: *
+	make build
+	touch .stamp.make
+
+build-default:
 	podman build $(BUILD_ARGS) -t "$(TAG)" .
 	podman tag "$(TAG)" "$(LATEST_TAG)"
-	touch .stamp.make
 
 clean-default:
 	rm -f .stamp.make
@@ -26,4 +29,4 @@ run-default: down
 %: %-default
 	@true
 
-.PHONY: all run-default pre-down-default clean-default down-default
+.PHONY: all build-default run-default pre-down-default clean-default down-default
