@@ -1,4 +1,5 @@
-BASE_TAG ?= $(shell basename ${PWD})
+REPOSITORY ?= localhost
+BASE_TAG ?= $(REPOSITORY)/$(shell basename ${PWD})
 TAG ?= $(BASE_TAG):$(shell date +%Y-%m-%d)
 LATEST_TAG ?= $(BASE_TAG):latest
 
