@@ -2,11 +2,11 @@ BASE_TAG ?= $(shell basename ${PWD})
 TAG ?= $(BASE_TAG):$(shell date +%Y-%m-%d)
 LATEST_TAG ?= $(BASE_TAG):latest
 
-all: Containerfile.stamp
+all: .stamp.make
 
-Containerfile.stamp: *
+.stamp.make: *
 	podman build -t "$(TAG)" .
 	podman tag "$(TAG)" "$(LATEST_TAG)"
-	touch Containerfile.stamp
+	touch .stamp.make
 
 .PHONY: all

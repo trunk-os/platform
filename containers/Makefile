@@ -8,6 +8,6 @@ all:
 	done
 
 clean:
-	rm -f */Containerfile.stamp
+	rm -f */.stamp.make
 
 .PHONY: all clean
