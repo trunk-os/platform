@@ -1,0 +1,11 @@
+FROM rust as rust
+
+RUN apt-get update -qq && apt-get install protobuf-compiler -y
+RUN cargo install --git https://github.com/trunk-os/buckle
+
+FROM debian
+
+COPY --from=rust /usr/local/cargo/bin/buckle /usr/bin/buckle
+COPY config.yaml /trunk/config.yaml
+
+CMD ["buckle"]

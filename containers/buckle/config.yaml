@@ -1,0 +1,3 @@
+socket: "/tmp/buckle.sock"
+zfs:
+  pool: "trunk"
