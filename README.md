@@ -15,7 +15,7 @@ Packaging repository
 - `all`: builds subdirs with `podman build`, tags them with the date and `:latest`. They will be in the `localhost` repository by default. Set the follow variables to influence a build:
     - `REPOSITORY`: the repository (first part) of the image name; set to `localhost` by default.
     - `NAME`: the name of the directory by default. Changing this will change the tags and the name of the container run by default. Take care when adjusting this.
-    - `BASE_TAG`: `$(REPOSITORY)/$NAME`, quite literally.
+    - `BASE_TAG`: `$(REPOSITORY)/$(NAME)`, quite literally.
     - `TAG`: the literal tag to use, combining `BASE_TAG` and a `YYYY-MM-DD` date.
     - `LATEST_TAG` is also tagged with the above schema just with `:latest` instead of the date.
     - `BUILD_ARGS` is defaulted to `--pull=always --no-cache` to keep packages compiling fresh, you can disable this by setting it to an empty string for faster builds (nice for files you edit).
