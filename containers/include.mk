@@ -7,7 +7,8 @@ BUILD_ARGS ?= --pull=always --no-cache
 
 all: .stamp.make
 
-.stamp.make: *
+# ignore the Makefile changes for builds since they never modify it
+.stamp.make: $(filter-out Makefile, $(wildcard *))
 	make build
 	touch .stamp.make
 
