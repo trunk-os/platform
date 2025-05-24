@@ -25,7 +25,7 @@ down-default: pre-down
 	sudo podman rm -f $(NAME)
 
 run-default: down
-	sudo podman run -it -d --name $(NAME) $(TAG)
+	sudo podman run -it -d --name "$(NAME)" "$(LATEST_TAG)"
 
 %: %-default
 	@true
