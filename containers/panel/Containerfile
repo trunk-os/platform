@@ -3,7 +3,7 @@ FROM debian:latest as git
 RUN apt-get update -qq && apt-get install git-core -y
 RUN git clone https://github.com/trunk-os/panel /panel
 WORKDIR /panel
-RUN rm -rf .git
+RUN rm -rf .git test scripts src/api/__tests__
 
 FROM docker.io/oven/bun:1-alpine AS builder
 
