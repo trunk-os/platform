@@ -1,4 +1,4 @@
 listen: "0.0.0.0:5309"
 socket: "/trunk/socket/buckled.sock"
 db: "/trunk/gild/gild.db"
-log_level: "info"
+log_level: info

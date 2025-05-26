@@ -1,4 +1,4 @@
 socket: "/trunk/socket/buckled.sock"
 zfs:
   pool: "trunk"
-log_level: "info"
+log_level: info
