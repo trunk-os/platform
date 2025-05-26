@@ -8,6 +8,8 @@ RUN rm -rf .git test scripts src/api/__tests__
 FROM docker.io/oven/bun:1-alpine AS builder
 
 COPY --from=git /panel /app
+COPY Caddyfile /app/Caddyfile
+COPY .env.production /app/.env.production
 
 WORKDIR /app
 RUN bun install --frozen-lockfile
