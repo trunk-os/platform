@@ -12,4 +12,7 @@ down:
 clean:
 	for i in $(DIRS); do cd $$i && make clean; cd ..; done
 
-.PHONY: all run clean down
+push:
+	for i in $(DIRS); do sudo podman push quay.io/trunk-os/$$(basename $$i) || exit 1; done
+
+.PHONY: all run clean down push

@@ -1,4 +1,4 @@
-REPOSITORY ?= localhost
+REPOSITORY ?= quay.io/trunk-os
 NAME ?= $(shell basename ${PWD})
 BASE_TAG ?= $(REPOSITORY)/$(NAME)
 TAG ?= $(BASE_TAG):$(shell date +%Y-%m-%d)
