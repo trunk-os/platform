@@ -6,6 +6,6 @@ RUN cargo install --git https://github.com/trunk-os/gild
 FROM debian
 
 COPY --from=rust /usr/local/cargo/bin/gild /usr/bin/gild
-COPY config.yaml /trunk/config.yaml
+COPY config.yaml /config.yaml
 
-CMD ["gild", "/trunk/config.yaml"]
+CMD ["gild", "/config.yaml"]
