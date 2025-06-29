@@ -1,0 +1,14 @@
+FROM rust as rust
+
+RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
+RUN cargo install --git https://github.com/trunk-os/charon
+
+FROM debian
+
+RUN apt-get update -qq && apt-get install libcurl4 -y
+
+COPY --from=rust /usr/local/cargo/bin/charond /usr/bin/charond
+COPY --from=rust /usr/local/cargo/bin/charon /usr/bin/charon
+COPY config.yaml /config.yaml
+
+CMD ["charond", "/config.yaml"]

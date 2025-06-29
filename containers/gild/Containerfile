@@ -1,6 +1,6 @@
 FROM rust as rust
 
-RUN apt-get update -qq && apt-get install protobuf-compiler -y
+RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
 RUN cargo install --git https://github.com/trunk-os/gild
 
 FROM debian

@@ -1,0 +1,3 @@
+socket: "/trunk/socket/charond.sock"
+registry: "/trunk/charon/registry"
+log_level: info
