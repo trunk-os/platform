@@ -1,0 +1,10 @@
+{
+  "title": {
+    "name": "test",
+    "version": "0.0.1"
+  },
+  "description": "Test package does not work",
+  "source": {
+    "container": "scratch"
+  }
+}
