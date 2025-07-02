@@ -1,5 +1,5 @@
 socket: "/trunk/socket/charond.sock"
 registry:
   path: "/trunk/charon/registry"
-  url: null
+  url: "https://github.com/trunk-os/charon-packages"
 log_level: info
