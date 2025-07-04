@@ -9,7 +9,6 @@ FROM docker.io/oven/bun:1-alpine AS builder
 
 COPY --from=git /panel /app
 COPY Caddyfile /app/Caddyfile
-COPY .env.production /app/.env.production
 
 WORKDIR /app
 RUN bun install --frozen-lockfile
@@ -18,5 +17,7 @@ RUN bun run build
 FROM docker.io/caddy:2-alpine
 COPY --from=builder /app/dist /srv
 COPY Caddyfile /etc/caddy/Caddyfile
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Caddy runs automatically with the default entrypoint
+CMD ["/entrypoint.sh"]
