@@ -7,6 +7,7 @@ Packaging repository
 - `all`: builds all subtrees
 - `clean`: cleans all subtree build artifacts
 - `run-containers`: runs all containers; see "Containers" below for more information.
+    - Note that if you want to run the UI, you must set VITE_API_BASE_URL=http://localhost:5309 or similar for API access.
 
 ### Containers
 
