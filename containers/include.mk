@@ -4,7 +4,7 @@ BASE_TAG ?= $(REPOSITORY)/$(NAME)
 TAG ?= $(BASE_TAG):$(shell date +%Y-%m-%d)
 LATEST_TAG ?= $(BASE_TAG):latest
 BUILD_ARGS ?= --pull=always --no-cache
-VITE_API_BASE_URL ?= http://trunk.local:5309
+VITE_API_BASE_URL ?= http://localhost:5309
 
 all: .stamp.make
 
