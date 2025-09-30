@@ -3,3 +3,4 @@ registry:
   path: "/trunk/charon/registry"
   url: "https://github.com/trunk-os/charon-packages"
 log_level: info
+charon_path: "/home/erikh/.cargo/bin/charon"
