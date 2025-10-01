@@ -1,0 +1,16 @@
+FROM rust as rust
+
+RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
+
+# yes, I am aware this sucks
+RUN git clone https://github.com/trunk-os/control-plane /control-plane
+WORKDIR /control-plane
+RUN cd buckle && cargo install --path .
+RUN cd charon && cargo install --path .
+RUN cd gild && cargo install --path .
+
+RUN cp /usr/local/cargo/bin/buckle /usr/bin/buckle
+RUN cp /usr/local/cargo/bin/buckled /usr/bin/buckled
+RUN cp /usr/local/cargo/bin/charond /usr/bin/charond
+RUN cp /usr/local/cargo/bin/charon /usr/bin/charon
+RUN cp /usr/local/cargo/bin/gild /usr/bin/gild

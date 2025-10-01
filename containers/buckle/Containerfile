@@ -1,16 +1,9 @@
-FROM rust as rust
-
-RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
-RUN cargo install --git https://github.com/trunk-os/buckle
-
-FROM debian
+FROM quay.io/trunk-os/control-plane
 
 RUN /bin/echo -e "deb http://deb.debian.org/debian bookworm-backports main contrib\ndeb-src http://deb.debian.org/debian bookworm-backports main contrib" >/etc/apt/sources.list.d/contrib.list
 
 RUN mkdir /package
 RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install zfsutils-linux -y
-COPY --from=rust /usr/local/cargo/bin/buckle /usr/bin/buckle
-COPY --from=rust /usr/local/cargo/bin/buckled /usr/bin/buckled
 COPY config.yaml /config.yaml
 
 CMD ["buckled", "/config.yaml"]

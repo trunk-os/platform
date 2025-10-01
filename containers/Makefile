@@ -1,7 +1,12 @@
-DIRS ?= $(shell find . -maxdepth 1 -type d | tail -n +2 | sort)
+DIRS ?= $(filter-out ./control-plane, $(shell find . -maxdepth 1 -type d | tail -n +2 | sort))
 
 all:
+	cd control-plane && make
 	for i in $(DIRS); do cd $$i && make; cd ..; done
+
+build:
+	cd control-plane && make build
+	for i in $(DIRS); do cd $$i && make build; cd ..; done
 
 run: all
 	for i in $(DIRS); do cd $$i && make run; cd ..; done

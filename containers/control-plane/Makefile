@@ -1,0 +1,3 @@
+include ../include.mk
+
+run:

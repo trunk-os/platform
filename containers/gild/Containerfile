@@ -1,12 +1,6 @@
-FROM rust as rust
-
-RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
-RUN cargo install --git https://github.com/trunk-os/gild
-
-FROM debian
+FROM quay.io/trunk-os/control-plane
 
 RUN apt-get update -qq && apt-get install libcurl4 -y
-COPY --from=rust /usr/local/cargo/bin/gild /usr/bin/gild
 COPY config.yaml /config.yaml
 
 CMD ["gild", "/config.yaml"]

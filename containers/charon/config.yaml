@@ -4,3 +4,4 @@ registry:
   url: "https://github.com/trunk-os/charon-packages"
 log_level: info
 charon_path: "/home/erikh/.cargo/bin/charon"
+buckle_socket: "/trunk/socket/buckled.sock"

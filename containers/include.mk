@@ -9,7 +9,7 @@ VITE_API_BASE_URL ?= http://localhost:5309
 all: .stamp.make
 
 # ignore the Makefile changes for builds since they never modify it
-.stamp.make: $(filter-out Makefile, $(wildcard *))
+.stamp.make: $(wildcard *)
 	make build
 	touch .stamp.make
 
