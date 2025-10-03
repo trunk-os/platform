@@ -9,8 +9,8 @@ RUN cd buckle && cargo install --path .
 RUN cd charon && cargo install --path .
 RUN cd gild && cargo install --path .
 
-RUN cp /usr/local/cargo/bin/buckle /usr/bin/buckle
-RUN cp /usr/local/cargo/bin/buckled /usr/bin/buckled
-RUN cp /usr/local/cargo/bin/charond /usr/bin/charond
-RUN cp /usr/local/cargo/bin/charon /usr/bin/charon
-RUN cp /usr/local/cargo/bin/gild /usr/bin/gild
+RUN cp /usr/local/cargo/bin/buckle /usr/bin/buckle && \
+    cp /usr/local/cargo/bin/buckled /usr/bin/buckled && \
+    cp /usr/local/cargo/bin/charond /usr/bin/charond && \
+    cp /usr/local/cargo/bin/charon /usr/bin/charon && \
+    cp /usr/local/cargo/bin/gild /usr/bin/gild

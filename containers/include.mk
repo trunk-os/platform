@@ -3,7 +3,7 @@ NAME ?= $(shell basename ${PWD})
 BASE_TAG ?= $(REPOSITORY)/$(NAME)
 TAG ?= $(BASE_TAG):$(shell date +%Y-%m-%d)
 LATEST_TAG ?= $(BASE_TAG):latest
-BUILD_ARGS ?= --pull=always --no-cache
+BUILD_ARGS ?= --no-cache
 VITE_API_BASE_URL ?= http://localhost:5309
 
 all: .stamp.make
