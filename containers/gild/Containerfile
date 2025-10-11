@@ -1,6 +1,5 @@
 FROM quay.io/trunk-os/control-plane
 
-RUN apt-get update -qq && apt-get install libcurl4 -y
 COPY config.yaml /config.yaml
 
 CMD ["gild", "/config.yaml"]

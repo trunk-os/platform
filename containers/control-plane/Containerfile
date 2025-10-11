@@ -5,9 +5,7 @@ RUN apt-get update -qq && apt-get install protobuf-compiler libsystemd-dev -y
 # yes, I am aware this sucks
 RUN git clone https://github.com/trunk-os/control-plane /control-plane
 WORKDIR /control-plane
-RUN cd buckle && cargo install --path .
-RUN cd charon && cargo install --path .
-RUN cd gild && cargo install --path .
+RUN cargo install --path buckle && cargo install --path charon && cargo install --path gild
 
 RUN cp /usr/local/cargo/bin/buckle /usr/bin/buckle && \
     cp /usr/local/cargo/bin/buckled /usr/bin/buckled && \
