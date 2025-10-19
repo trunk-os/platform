@@ -11,7 +11,10 @@ clean-containers:
 run-containers:
 	cd containers && make run
 
-trunk:
+import-trunk:
+	sudo zpool import -d ./trunk_files trunk
+
+recreate-trunk:
 	sudo zpool destroy trunk || :
 	mkdir -p trunk_files
 	for i in one two three four; do rm -f trunk_files/$$i; truncate -s50G trunk_files/$$i; done
