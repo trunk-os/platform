@@ -1,5 +1,8 @@
 include ../include.mk
 
+pre-build:
+	sudo podman pull docker.io/grafana/grafana:latest
+
 run: down
 	sudo zfs create trunk/grafana || :
 	sudo zfs set quota=50G trunk/grafana || :

@@ -1,23 +1,23 @@
-DIRS ?= $(filter-out ./control-plane, $(shell find . -maxdepth 1 -type d | tail -n +2 | sort))
+DIRS ?= $(shell find . -maxdepth 1 -type d | tail -n +2 | sort)
 
-all:
-	cd control-plane && make
-	for i in $(DIRS); do cd $$i && make; cd ..; done
+all: run
 
 build:
-	cd control-plane && make build
-	for i in $(DIRS); do cd $$i && make build; cd ..; done
+	cd base && make build
+	cd services && make build
 
-run: all
-	for i in $(DIRS); do cd $$i && make run; cd ..; done
+run: build 
+	cd services && make run
 
 down:
-	for i in $(DIRS); do cd $$i && make down; cd ..; done
+	cd services && make down
 
 clean:
-	for i in $(DIRS); do cd $$i && make clean; cd ..; done
+	cd base && make clean
+	cd services && make clean
 
 push:
-	for i in $(DIRS); do sudo podman push quay.io/trunk-os/$$(basename $$i) || exit 1; done
+	cd base && make push
+	cd services && make push
 
 .PHONY: all run clean down push

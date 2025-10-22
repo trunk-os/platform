@@ -28,6 +28,9 @@ down-default: pre-down
 run-default: down
 	sudo podman run -it -d --name "$(NAME)" "$(LATEST_TAG)"
 
+push-default:
+	sudo podman push $(LATEST_TAG)
+
 %: %-default
 	@true
 
