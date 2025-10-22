@@ -1,18 +1,22 @@
 {
+  "title": "Trunk Overview",
   "apiVersion": "dashboard.grafana.app/v2beta1",
   "kind": "Dashboard",
   "metadata": {
-    "name": "adnkxbw",
+    "name": "ad66tmb",
     "namespace": "default",
-    "uid": "5siXea7QhLGBMXCjHsfbfHTofNfD9mCbVMeHB9exSP4X",
-    "resourceVersion": "14",
-    "generation": 14,
-    "creationTimestamp": "2025-10-11T07:20:54Z",
+    "uid": "uDyfKXCogaRtoUWnXTIsCjnChKXTz88XjuVu3n9j0LYX",
+    "resourceVersion": "1",
+    "generation": 1,
+    "creationTimestamp": "2025-10-22T05:42:08Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "1"
+      "grafana.app/deprecatedInternalID": "2"
     },
     "annotations": {
-      "grafana.app/updatedTimestamp": "2025-10-17T00:28:19Z"
+      "grafana.app/createdBy": "user:df1sghi1s1534a",
+      "grafana.app/updatedBy": "user:df1sghi1s1534a",
+      "grafana.app/updatedTimestamp": "2025-10-22T05:42:08Z",
+      "grafana.app/folder": ""
     }
   },
   "spec": {
@@ -26,9 +30,6 @@
           "iconColor": "rgba(0, 211, 255, 1)",
           "name": "Annotations & Alerts",
           "query": {
-            "datasource": {
-              "name": "-- Grafana --"
-            },
             "group": "grafana",
             "kind": "DataQuery",
             "spec": {},
@@ -52,9 +53,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -167,9 +165,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -192,9 +187,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -309,9 +301,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -332,9 +321,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -448,9 +434,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -469,9 +452,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "ff0pcvviajx1cf"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -657,7 +637,7 @@
       "timezone": "browser",
       "to": "now"
     },
-    "title": "Trunk Overview",
+    "title": "Trunk Overview 2",
     "variables": []
   },
   "status": {}
