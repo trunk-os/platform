@@ -15,22 +15,7 @@
       "version": ""
     }
   ],
-  "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": {
-          "type": "grafana",
-          "uid": "-- Grafana --"
-        },
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
-  },
+  "annotations": {},
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
@@ -118,7 +103,7 @@
       "pluginVersion": "12.2.1",
       "targets": [
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "expr": "rate(node_disk_read_bytes_total[$__rate_interval])",
           "hide": false,
@@ -127,7 +112,7 @@
           "refId": "A"
         },
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "expr": "rate(node_disk_written_bytes_total[$__rate_interval])",
           "hide": false,
@@ -221,7 +206,7 @@
       "pluginVersion": "12.2.1",
       "targets": [
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "exemplar": false,
           "expr": "node_filesystem_avail_bytes{mountpoint=\"/trunk\", instance=\"localhost:9100\"}",
@@ -234,7 +219,7 @@
           "refId": "A"
         },
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "exemplar": false,
           "expr": "node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"localhost:9100\"}",
@@ -329,7 +314,7 @@
       "pluginVersion": "12.2.1",
       "targets": [
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "exemplar": false,
           "expr": "rate(node_network_receive_bytes_total{device!~\"lo|veth.|eth.|podman.|tailscale.\"}[$__rate_interval]) * 8",
@@ -340,7 +325,7 @@
           "refId": "A"
         },
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "expr": "rate(node_network_transmit_bytes_total{device!~\"lo|eth.|veth.|podman.|tailscale.\"}[$__rate_interval]) * 8",
           "hide": false,
@@ -434,7 +419,7 @@
       "pluginVersion": "12.2.1",
       "targets": [
         {
-          "datasource": {},
+          "datasource": "Prometheus",
           "editorMode": "builder",
           "expr": "(sum(rate(node_cpu_seconds_total{mode!~\"idle|iowait\"}[$__rate_interval])) * 100) / (count(node_cpu_seconds_total{mode=\"user\"}))",
           "hide": false,
