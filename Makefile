@@ -21,4 +21,10 @@ recreate-trunk:
 	for i in one two three four; do rm -f trunk_files/$$i; truncate -s50G trunk_files/$$i; done
 	sudo zpool create trunk raidz ./trunk_files/one ./trunk_files/two ./trunk_files/three ./trunk_files/four
 
-.PHONY: all clean containers clean-containers run-containers
+restart-services:
+	sudo systemctl restart trunk-prometheus || :
+	sudo systemctl restart trunk-node-exporter || :
+	sudo systemctl restart trunk-grafana || :
+	sudo podman restart buckle charon gild >/dev/null
+
+.PHONY: all clean containers clean-containers run-containers restart-services
